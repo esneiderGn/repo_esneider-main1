@@ -1,0 +1,361 @@
+.btn-dinamico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #0f8dbe 0%, #1b1ec2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.12rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.18);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: background 0.4s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid #00fff2;
+}
+.btn-dinamico:hover {
+    background: linear-gradient(90deg, #0f8dbe 0%, #1b1ec2 100%);
+    transform: translateY(-3px) scale(1.07);
+    box-shadow: 0 8px 32px 0 rgba(16, 41, 179, 0.28);
+    border-color: #0f0cc0;
+}
+.btn-dinamico:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px 0 rgba(180,134,11,0.10);
+}
+.btn-dinamico svg {
+    transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.btn-dinamico:hover svg {
+    transform: translateX(4px) scale(1.15) rotate(8deg);
+}
+.btn-dinamico span {
+    transition: color 0.3s;
+}
+.btn-dinamico:hover span {
+    color: #ffffff;
+}
+.btn-dinamico .wave {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: waveEffect 0.5s linear;
+    pointer-events: none;
+    z-index: 2;
+}
+@keyframes waveEffect {
+    0% { opacity: 0.7; width: 10px; height: 10px; }
+    100% { opacity: 0; width: 120px; height: 120px; }
+}
+.btn-dinamico.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+.btn-dinamico .loading-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #061fad;
+    font-size: 1em;
+    background: #fffbe9;
+    padding: 6px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0f4dc0fd;
+    z-index: 3;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: fadeInLoading 0.3s;
+}
+@keyframes fadeInLoading {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* --- ESTILOS PARA PRODUCTOS --- */
+.productos-container {
+    background: rgba(255,255,255,0.92);
+    padding: 2.5rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.22), 0 1.5px 8px 0 rgba(102,166,255,0.13);
+    max-width: 980px;
+    margin: 2.5rem auto;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.productos-container h2 {
+    color: #2193b0;
+    font-size: 2.2rem;
+    margin-bottom: 2.2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #b2bec3;
+    animation: popIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.productos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.2rem;
+    justify-content: center;
+}
+.producto {
+    background: linear-gradient(135deg, #f7f7f7 70%, #e0f7fa 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(33, 147, 176, 0.10);
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    width: 240px;
+    text-align: center;
+    transition: box-shadow 0.25s, transform 0.25s;
+    position: relative;
+    overflow: hidden;
+    animation: productoFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.producto:hover {
+    box-shadow: 0 8px 32px rgba(33, 147, 176, 0.18);
+    transform: translateY(-6px) scale(1.04);
+}
+.producto img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 2px 8px rgba(33, 147, 176, 0.10);
+    transition: transform 0.3s;
+}
+.producto:hover img {
+    transform: scale(1.08) rotate(-2deg);
+}
+.producto h3 {
+    color: #176087;
+    font-size: 1.18rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    letter-spacing: 0.5px;
+}
+.producto p {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+.producto span {
+    display: block;
+    color: #2193b0;
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+}
+.producto button {
+    margin-top: 0.7rem;
+    background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(102,166,255,0.10);
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.producto button:hover {
+    background: linear-gradient(90deg, #176087 0%, #2193b0 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 16px 0 rgba(102,166,255,0.18);
+}
+.producto button.btn-animate {
+    animation: btnClick 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes productoFadeIn {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Partículas decorativas para productos */
+.productos-container::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, #6dd5ed88 60%, transparent 100%);
+    border-radius: 50%;
+    animation: float1 7s ease-in-out infinite alternate;
+    z-index: 0;
+}
+.productos-container::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, #2193b088 60%, transparent 100%);
+    border-radius: 50%;
+    animation: float2 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+.productos-container * {
+    position: relative;
+    z-index: 1;
+}
+body {
+    background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bgMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2.5rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 1.5px 8px 0 rgba(102,166,255,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 340px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #2193b0;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #b2bec3;
+    animation: popIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+.login-container label {
+    align-self: flex-start;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #176087;
+    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+}
+.login-container input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.2rem;
+    border: 1.5px solid #b2bec3;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 1px 4px 0 rgba(102,166,255,0.08);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.login-container input:focus {
+    border-color: #2193b0;
+    box-shadow: 0 0 8px #66a6ff44;
+}
+.login-container button {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.08rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(102,166,255,0.15);
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.login-container button:hover {
+    background: linear-gradient(90deg, #176087 0%, #2193b0 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px 0 rgba(102,166,255,0.22);
+}
+
+/* Animación dinámica al hacer clic */
+.login-container button.btn-animate {
+    animation: btnClick 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes btnClick {
+    0% { transform: scale(1); }
+    30% { transform: scale(0.92); }
+    60% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* Animación de partículas decorativas */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #6dd5ed88 60%, transparent 100%);
+    border-radius: 50%;
+    animation: float1 6s ease-in-out infinite alternate;
+    z-index: 0;
+}
+.login-container::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #2193b088 60%, transparent 100%);
+    border-radius: 50%;
+    animation: float2 7s ease-in-out infinite alternate;
+    z-index: 0;
+}
+@keyframes float1 {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(20px) scale(1.1); }
+}
+@keyframes float2 {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-15px) scale(1.08); }
+}
+
+/* Elevar el formulario sobre las partículas */
+.login-container * {
+    position: relative;
+    z-index: 1;
+}

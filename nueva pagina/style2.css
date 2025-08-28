@@ -1,0 +1,172 @@
+body {
+	background: linear-gradient(120deg, #f8ffea 0%, #e0c3fc 100%);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	animation: bgMove 10s ease-in-out infinite alternate;
+	transition: background 1s;
+}
+
+@keyframes bgMove {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+header {
+	width: 100%;
+	background: linear-gradient(90deg, #e0c3fc 0%, #f8ffea 100%);
+	box-shadow: 0 2px 12px rgba(160, 210, 255, 0.12);
+	padding: 1.5rem 0 1rem 0;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	margin-bottom: 2rem;
+}
+header h1 {
+	color: #7f53ac;
+	font-size: 2.5rem;
+	text-align: center;
+	letter-spacing: 2px;
+	text-shadow: 0 2px 12px #e0c3fc88;
+	margin-bottom: 0.5rem;
+}
+nav ul {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+nav a {
+	color: #7f53ac;
+	font-weight: bold;
+	font-size: 1.15rem;
+	text-decoration: none;
+	padding: 0.5rem 1.2rem;
+	border-radius: 18px;
+	background: linear-gradient(90deg, #f8ffea 60%, #e0c3fc 100%);
+	box-shadow: 0 2px 8px #e0c3fc44;
+	transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+nav a:hover {
+	background: linear-gradient(90deg, #7f53ac 0%, #e0c3fc 100%);
+	color: #fff;
+	box-shadow: 0 4px 16px #7f53ac44;
+}
+
+main {
+	background: rgba(255,255,255,0.92);
+	padding: 2.5rem 3rem;
+	border-radius: 30px;
+	box-shadow: 0 8px 32px 0 rgba(127, 83, 172, 0.18), 0 1.5px 8px 0 rgba(224,195,252,0.13);
+	max-width: 900px;
+	margin: 2.5rem auto;
+	position: relative;
+	overflow: hidden;
+	animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+main h2 {
+	color: #7f53ac;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	text-align: left;
+	letter-spacing: 1px;
+	text-shadow: 0 2px 8px #e0c3fc88;
+	animation: popIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+main ul, main ol {
+	font-size: 1.15rem;
+	color: #444;
+	margin-bottom: 1.5rem;
+	padding-left: 1.5rem;
+}
+main ul li, main ol li {
+	margin-bottom: 0.7rem;
+	transition: color 0.3s, transform 0.3s;
+}
+main ul li:hover, main ol li:hover {
+	color: #7f53ac;
+	transform: scale(1.05);
+}
+section {
+	margin-bottom: 2.2rem;
+	background: linear-gradient(90deg, #f8ffea 80%, #e0c3fc 100%);
+	border-radius: 18px;
+	box-shadow: 0 2px 8px #e0c3fc22;
+	padding: 1.5rem 1.2rem;
+	animation: productoFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+footer {
+	text-align: center;
+	color: #7f53ac;
+	background: linear-gradient(90deg, #e0c3fc 0%, #f8ffea 100%);
+	padding: 1.2rem 0;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	box-shadow: 0 -2px 12px #e0c3fc44;
+	font-size: 1.1rem;
+	margin-top: 2rem;
+}
+.skin-bubble {
+	position: absolute;
+	border-radius: 50%;
+	background: radial-gradient(circle, #e0c3fc88 60%, transparent 100%);
+	animation: float1 7s ease-in-out infinite alternate;
+	z-index: 0;
+}
+.skin-bubble.b1 {
+	top: -40px; left: -40px; width: 90px; height: 90px;
+}
+.skin-bubble.b2 {
+	bottom: -30px; right: -30px; width: 70px; height: 70px;
+	animation: float2 8s ease-in-out infinite alternate;
+}
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(40px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+	0% { opacity: 0; transform: scale(0.8); }
+	100% { opacity: 1; transform: scale(1); }
+}
+@keyframes productoFadeIn {
+	0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+	100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes float1 {
+	0% { transform: translateY(0) scale(1); }
+	100% { transform: translateY(20px) scale(1.1); }
+}
+@keyframes float2 {
+	0% { transform: translateY(0) scale(1); }
+	100% { transform: translateY(-15px) scale(1.08); }
+}
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+main {
+	width: 100%;
+	max-width: 900px;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+header, footer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
