@@ -170,3 +170,75 @@ header, footer {
 	justify-content: center;
 }
 
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.producto-card {
+    background: linear-gradient(120deg, #f8ffea 60%, #e0c3fc 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #e0c3fc44;
+    padding: 1.5rem 1.2rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: productoFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.producto-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 32px #7f53ac44;
+    background: linear-gradient(120deg, #e0c3fc 60%, #f8ffea 100%);
+}
+
+.producto-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #e0c3fc22;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.producto-card:hover img {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.producto-card h3 {
+    color: #7f53ac;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px #e0c3fc44;
+    transition: color 0.3s;
+}
+
+.producto-card p {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 0;
+    transition: color 0.3s;
+}
+
+.producto-card:hover h3,
+.producto-card:hover p {
+    color: #7f53ac;
+}
+
+/* Responsive para móviles */
+@media (max-width: 700px) {
+    .productos-grid {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+    }
+    .producto-card {
+        width: 90vw;
+        padding: 1rem 0.5rem;
+    }
+}
